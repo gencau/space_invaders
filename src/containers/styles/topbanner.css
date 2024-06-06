@@ -1,0 +1,27 @@
+.tableau {
+    display:flex;
+    margin:0;
+    list-style: none;
+
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.0em;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.push {
+    margin-left: auto;
+}
+
+li {
+    padding:20px;
+}
+
+.num {
+    color:#33ff00;
+}
+
+img {
+    padding-left:20px;
+}

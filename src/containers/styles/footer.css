@@ -1,0 +1,11 @@
+.line {
+    border: 0;
+    height: 3px;
+    background-color: #33ff00;
+
+    position: fixed;
+    bottom: 0;
+    width: 95%;
+
+    margin-bottom: 10px;
+}

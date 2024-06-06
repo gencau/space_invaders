@@ -1,0 +1,11 @@
+.player {
+    position: absolute;
+    transition: transform 0.01s;
+
+    display:flex;
+}
+
+img {
+    text-align: center;
+}
+
