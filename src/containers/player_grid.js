@@ -1,12 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect} from "react";
 import Player from "../components/player";
 import './styles/player-container.css';
 import bulletImg from '../images/pngegg.png';
 
-const PlayerGrid = () => {
-    const [position, setPosition] = useState(0);
-    const [bullets, setBullets] = useState([]);
-
+const PlayerGrid = ({position, setPosition, bullets, setBullets}) => {
+    
     const handleKeyDown = (event) => {
         if (event.key === 'ArrowRight')
             setPosition((prevPosition) => prevPosition + 10);
@@ -30,22 +28,13 @@ const PlayerGrid = () => {
         }
     }
 
-    const updateBullets = () => {
-        setBullets((prevBullets) =>
-            prevBullets.map((bullet) => ({ ...bullet, y: bullet.y + 10 }))
-                       .filter((bullet) => bullet.y < window.innerHeight)
-        );
-    };
-
     useEffect(() => {
-        const interval = setInterval(updateBullets, 50);
         window.addEventListener('keydown', handleKeyDown);
-
+    
         return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-            clearInterval(interval);
+          window.removeEventListener('keydown', handleKeyDown);
         };
-    },[]);
+      }, []);
 
     return (
         <div className="player-container">

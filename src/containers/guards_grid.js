@@ -1,10 +1,14 @@
 import React from "react";
 import Guards from "../components/guards";
+import './styles/guards-grid.css';
 
-const GuardsGrid = () => {
+const GuardsGrid = ({guards}) => {
     return (
-        <div>
-            <Guards/>
+        <div className="guards-grid">
+            {guards.map((guard) => (
+                <Guards key={guard.id} guard={guard} />
+            ))
+            }
         </div>
     );
 }

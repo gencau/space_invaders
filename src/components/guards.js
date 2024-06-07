@@ -4,14 +4,9 @@ import damageImg from '../images/guard-damage1.jpeg'
 import './styles/guards.css';
 
 const Guards = ({guard}) => {
-    let damageLevel = 0;
-    
     return (
-        <div className="guards-container">
-            <div><img className="guards-img" src={damageLevel === 0 ? guardsImg : damageImg} alt='Guards'></img></div>
-            <div><img className="guards-img" src={guardsImg} alt='Guards'></img></div>
-            <div><img className="guards-img" src={guardsImg} alt='Guards'></img></div>
-            <div><img className="guards-img" src={guardsImg} alt='Guards'></img></div>
+        <div className="guards-container" style={{left: `${guard.x}px`, top: `${guard.y}px`}}>
+            <div><img className="guards-img" src={guard.health === 100 ? guardsImg : damageImg} alt='Guard'></img></div>
         </div>
     );
 }
